@@ -62,22 +62,38 @@
             z-index: 10;
         }
     </style>
+    
+    <!-- Skrip Netlify Identity (Biar bisa login admin dari halaman mana aja) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="antialiased selection:bg-pawmi-kuning selection:text-pawmi-cokelatTua">
+    
+    <!-- Skrip Pendukung Login Admin -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
 
     <!-- HEADER / NAVIGASI -->
     <header class="sticky top-0 z-50 w-full bg-pawmi-bg/90 backdrop-blur-md border-b-2 border-pawmi-cokelatTua">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 sm:h-20">
                 <a href="index.html" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <!-- <img src="link-logo.png" alt="Logo Pawmi" class="h-8 w-auto object-contain"> -->
+                    <!-- <img src="images/logo-pawmi.png" alt="Logo Pawmi" class="h-8 w-auto object-contain"> -->
                     <span class="text-2xl font-black text-pawmi-cokelat tracking-tight">Pawmi<span class="text-pawmi-kuningTegas drop-shadow-md">.</span></span>
                 </a>
                 <nav class="hidden md:flex gap-8 font-bold text-pawmi-cokelatTua text-sm lg:text-base">
                     <a href="index.html" class="hover:text-pawmi-cokelat transition-colors">Home</a>
                     <a href="animasi-ai.html" class="hover:text-pawmi-cokelat transition-colors">Animasi AI</a>
                     <a href="video-ads.html" class="text-pawmi-cokelat transition-colors border-b-2 border-pawmi-cokelat">Video Ads & Sosmed</a>
-                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-cokelat transition-colors">Portofolio</a>
+                    <a href="portofolio.html" class="hover:text-pawmi-cokelat transition-colors">Portofolio</a>
                 </nav>
                 <div class="hidden sm:flex">
                     <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-6 py-2.5 text-sm font-bold text-pawmi-cokelatTua btn-neo">
@@ -120,7 +136,7 @@
             </p>
             
             <div class="mt-10 flex flex-col sm:flex-row gap-5 justify-center w-full sm:w-auto">
-                <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo bg-pawmi-kuningTegas border-2 border-pawmi-cokelatTua shadow-neo-dark-sm rounded-full px-8 py-3.5 text-base font-bold text-pawmi-cokelatTua">
+                <a href="portofolio.html" class="btn-neo bg-pawmi-kuningTegas border-2 border-pawmi-cokelatTua shadow-neo-dark-sm rounded-full px-8 py-3.5 text-base font-bold text-pawmi-cokelatTua">
                     Lihat Portofolio ➔
                 </a>
                 <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo bg-white border-2 border-pawmi-cokelatTua shadow-neo-dark-sm rounded-full px-8 py-3.5 text-base font-bold text-pawmi-cokelatTua flex items-center justify-center gap-2">
@@ -209,7 +225,7 @@
         </div>
     </section>
 
-    <!-- GALERI HASIL KARYA -->
+    <!-- GALERI HASIL KARYA (STATIS) -->
     <section class="relative w-full bg-pawmi-cokelatTua py-20 lg:py-28 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -221,42 +237,54 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Cuplikan Ads 1</span></div>
+                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center">
+                        <span class="font-bold text-gray-400">Cuplikan Ads 1</span>
+                    </div>
                     <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
                         <span class="inline-block bg-[#FFB5A7] px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">TikTok Ads</span>
                         <h4 class="font-bold text-pawmi-cokelatTua text-lg">Promo Fashion Lebaran</h4>
                     </div>
                 </div>
                 <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Cuplikan Ads 2</span></div>
+                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center">
+                        <span class="font-bold text-gray-400">Cuplikan Ads 2</span>
+                    </div>
                     <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
                         <span class="inline-block bg-pawmi-kuning px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">Product Explainer</span>
                         <h4 class="font-bold text-pawmi-cokelatTua text-lg">Cara Pakai Skincare AI</h4>
                     </div>
                 </div>
                 <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Cuplikan Ads 3</span></div>
+                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center">
+                        <span class="font-bold text-gray-400">Cuplikan Ads 3</span>
+                    </div>
                     <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
                         <span class="inline-block bg-[#E8DDFB] px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">IG Reels</span>
                         <h4 class="font-bold text-pawmi-cokelatTua text-lg">Storytelling Bisnis Kopi</h4>
                     </div>
                 </div>
                 <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Cuplikan Ads 4</span></div>
+                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center">
+                        <span class="font-bold text-gray-400">Cuplikan Ads 4</span>
+                    </div>
                     <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
                         <span class="inline-block bg-[#A7E4FF] px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">FB Ads</span>
                         <h4 class="font-bold text-pawmi-cokelatTua text-lg">Iklan Properti Perumahan</h4>
                     </div>
                 </div>
                 <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Cuplikan Ads 5</span></div>
+                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center">
+                        <span class="font-bold text-gray-400">Cuplikan Ads 5</span>
+                    </div>
                     <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
                         <span class="inline-block bg-pawmi-kuning px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">TikTok Content</span>
                         <h4 class="font-bold text-pawmi-cokelatTua text-lg">Edukasi Kelas Online</h4>
                     </div>
                 </div>
                 <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Cuplikan Ads 6</span></div>
+                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center">
+                        <span class="font-bold text-gray-400">Cuplikan Ads 6</span>
+                    </div>
                     <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
                         <span class="inline-block bg-[#FFB5A7] px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">IG Reels</span>
                         <h4 class="font-bold text-pawmi-cokelatTua text-lg">Teaser Produk Baru</h4>
@@ -265,7 +293,7 @@
             </div>
             
             <div class="mt-12 text-center">
-                <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo inline-block bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-8 py-3 text-lg font-bold text-pawmi-cokelatTua">Lihat Lebih Banyak Karya Kita ➔</a>
+                <a href="portofolio.html" class="btn-neo inline-block bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-8 py-3 text-lg font-bold text-pawmi-cokelatTua">Lihat Lebih Banyak Karya Kita ➔</a>
             </div>
         </div>
     </section>
@@ -308,7 +336,7 @@
                             <li class="flex items-start gap-3"><span class="shrink-0 mt-0.5 w-5 h-5 rounded bg-green-200 border border-pawmi-cokelatTua flex items-center justify-center text-[10px]">✔️</span> BGM Bebas Copyright</li>
                             <li class="flex items-start gap-3 pt-3 border-t border-pawmi-cokelatTua/20 text-pawmi-cokelatTua/80 text-xs"><span class="shrink-0 mt-0.5">📌</span> Revisi Terstruktur: 1x Script, 1x Visual, 1x Video (Minor)</li>
                         </ul>
-                        <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo text-center w-full bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Single</a>
+                        <a href="https://wa.me/6283171603841?text=Halo%20Admin,%20saya%20tertarik%20pesan%20Paket%20Single%20Ads%20(Rp%20250rb).%20Bisa%20dibantu?" class="btn-neo text-center w-full bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Single</a>
                     </div>
 
                     <!-- Ads B (Best Seller) -->
@@ -330,7 +358,7 @@
                             <li class="flex items-start gap-3"><span class="shrink-0 mt-0.5 w-5 h-5 rounded bg-pawmi-kuningTegas border border-pawmi-cokelatTua flex items-center justify-center text-[10px] text-pawmi-cokelatTua">✔️</span> Pengerjaan Prioritas</li>
                             <li class="flex items-start gap-3 pt-3 border-t border-pawmi-bg/20 text-pawmi-bg/80 text-xs"><span class="shrink-0 mt-0.5">📌</span> Revisi Terstruktur: 1x Script, 1x Visual, 1x Video Minor (Per Video)</li>
                         </ul>
-                        <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo text-center w-full bg-pawmi-kuningTegas border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Testing Ads</a>
+                        <a href="https://wa.me/6283171603841?text=Halo%20Admin,%20saya%20tertarik%20pesan%20Paket%20Testing%20Ads%203%20Video%20(Rp%20599rb).%20Gimana%20prosesnya?" class="btn-neo text-center w-full bg-pawmi-kuningTegas border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Testing Ads</a>
                     </div>
 
                     <!-- Ads C -->
@@ -349,7 +377,7 @@
                             <li class="flex items-start gap-3"><span class="shrink-0 mt-0.5 w-5 h-5 rounded bg-green-200 border border-pawmi-cokelatTua flex items-center justify-center text-[10px]">✔️</span> Grup VIP WhatsApp Khusus Evaluasi</li>
                             <li class="flex items-start gap-3 pt-3 border-t border-pawmi-cokelatTua/20 text-pawmi-cokelatTua/80 text-xs"><span class="shrink-0 mt-0.5">📌</span> Revisi Terstruktur: 1x Script, 1x Visual, 1x Video Minor (Per Video)</li>
                         </ul>
-                        <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo text-center w-full bg-[#E8DDFB] border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Scale-Up</a>
+                        <a href="https://wa.me/6283171603841?text=Halo%20Admin,%20saya%20butuh%20Paket%20Scale-Up%20Ads%2015%20Video%20(Rp%202.499rb).%20Bisa%20konsultasi%20dulu?" class="btn-neo text-center w-full bg-[#E8DDFB] border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Scale-Up</a>
                     </div>
                 </div>
             </div>
@@ -379,7 +407,7 @@
                             <li class="flex items-start gap-3"><span class="shrink-0 mt-0.5 w-5 h-5 rounded bg-[#A7E4FF] border border-pawmi-cokelatTua flex items-center justify-center text-[10px]">✔️</span> BGM Tren / Bebas Copyright</li>
                             <li class="flex items-start gap-3 pt-3 border-t border-pawmi-cokelatTua/20 text-pawmi-cokelatTua/80 text-xs"><span class="shrink-0 mt-0.5">📌</span> Revisi Terstruktur: 1x Script, 1x Visual, 1x Video (Minor)</li>
                         </ul>
-                        <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo text-center w-full bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Single</a>
+                        <a href="https://wa.me/6283171603841?text=Halo%20Admin,%20saya%20tertarik%20pesan%20Paket%20Single%20Konten%20Sosmed%20(Rp%20150rb).%20Bisa%20dibantu?" class="btn-neo text-center w-full bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Single</a>
                     </div>
 
                     <!-- Konten B -->
@@ -398,7 +426,7 @@
                             <li class="flex items-start gap-3"><span class="shrink-0 mt-0.5 w-5 h-5 rounded bg-[#A7E4FF] border border-pawmi-cokelatTua flex items-center justify-center text-[10px]">✔️</span> BGM Pilihan & Bebas Copyright</li>
                             <li class="flex items-start gap-3 pt-3 border-t border-pawmi-cokelatTua/20 text-pawmi-cokelatTua/80 text-xs"><span class="shrink-0 mt-0.5">📌</span> Revisi Terstruktur: 1x Script, 1x Visual, 1x Video Minor (Per Video)</li>
                         </ul>
-                        <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo text-center w-full bg-[#A7E4FF] border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Mini Batch</a>
+                        <a href="https://wa.me/6283171603841?text=Halo%20Admin,%20saya%20tertarik%20pesan%20Paket%20Mini%20Batch%203%20Konten%20(Rp%20349rb).%20Gimana%20prosesnya?" class="btn-neo text-center w-full bg-[#A7E4FF] border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Mini Batch</a>
                     </div>
 
                     <!-- Konten C (Pengganti Tim Konten) -->
@@ -420,7 +448,7 @@
                             <li class="flex items-start gap-3"><span class="shrink-0 mt-0.5 w-5 h-5 rounded bg-white border border-pawmi-cokelatTua flex items-center justify-center text-[10px]">✔️</span> Jalur Komunikasi Langsung via WhatsApp</li>
                             <li class="flex items-start gap-3 pt-3 border-t border-pawmi-cokelatTua/20 text-pawmi-cokelatTua/80 text-xs"><span class="shrink-0 mt-0.5">📌</span> Revisi Terstruktur: 1x Script, 1x Visual, 1x Video Minor (Per Video)</li>
                         </ul>
-                        <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo text-center w-full bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Dominasi</a>
+                        <a href="https://wa.me/6283171603841?text=Halo%20Admin,%20saya%20butuh%20Paket%20Dominasi%20Sosmed%2015%20Video%20(Rp%201.500rb).%20Bisa%20konsultasi%20dulu?" class="btn-neo text-center w-full bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Dominasi</a>
                     </div>
                 </div>
             </div>
@@ -431,7 +459,7 @@
                     <h3 class="text-2xl font-black text-pawmi-cokelatTua mb-2">Punya Kebutuhan Lain / Durasi Panjang / Konsep Khusus?</h3>
                     <p class="font-medium text-pawmi-cokelatTua/80">Mau bikin di luar paket di atas? Tenang, kita bisa buatkan konsep sesuai keinginanmu.</p>
                 </div>
-                <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="shrink-0 btn-neo bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-8 py-4 text-lg font-bold text-pawmi-cokelatTua flex items-center gap-2">
+                <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi,%20saya%20punya%20ide%20custom%20video%20nih%20tapi%20butuh%20konsultasi%20harga%20dan%20konsepnya%20dulu." class="shrink-0 btn-neo bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-8 py-4 text-lg font-bold text-pawmi-cokelatTua flex items-center gap-2">
                     💬 Chat WhatsApp Saja ➔
                 </a>
             </div>
@@ -439,7 +467,7 @@
         </div>
     </section>
 
-    <!-- SECTION TESTIMONI (DITAMBAHKAN KEMBALI) -->
+    <!-- SECTION TESTIMONI -->
     <section class="relative w-full bg-[#E8DDFB] py-20 lg:py-28 overflow-hidden border-b-2 border-pawmi-cokelatTua">
         <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-[0.08] text-6xl flex flex-wrap justify-around items-center gap-16 select-none -z-0">
             <span>🎬</span><span>🎥</span><span>✨</span><span>🤖</span><span>🎞️</span><span>💡</span>
@@ -568,6 +596,7 @@
                 </div>
             </div>
 
+            <!-- Tombol Panah Navigasi Testimoni -->
             <div class="mt-2 flex items-center justify-center gap-4">
                 <button id="btn-prev" class="btn-neo flex h-12 w-12 items-center justify-center rounded-full border-2 border-pawmi-cokelatTua bg-white text-pawmi-cokelatTua shadow-neo-dark-sm z-10" aria-label="Sebelumnya">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"></path></svg>
@@ -682,7 +711,8 @@
                     </div>
                 </div>
                 
-                <div class="relative w-full aspect-square max-w-md mx-auto bg-pawmi-kuning border-4 border-pawmi-bg shadow-neo-dark-lg rounded-[3rem] flex items-center justify-center overflow-hidden transform rotate-2 hover:-rotate-1 transition-transform duration-300 mt-10 lg:mt-0">
+                <!-- INI WADAH MASKOT YANG UDAH DIKASIH ID BUAT CMS -->
+                <div id="wadah-maskot" class="relative w-full aspect-square max-w-md mx-auto bg-pawmi-kuning border-4 border-pawmi-bg shadow-neo-dark-lg rounded-[3rem] flex items-center justify-center overflow-hidden transform rotate-2 hover:-rotate-1 transition-transform duration-300 mt-10 lg:mt-0">
                     <span class="font-bold text-pawmi-cokelatTua/40 text-2xl text-center px-6">
                         [Image/Mascot] <br> Placeholder Pawmi
                     </span>
@@ -711,7 +741,7 @@
                         <li><a href="index.html" class="hover:text-pawmi-kuningTegas transition-colors">Home</a></li>
                         <li><a href="animasi-ai.html" class="hover:text-pawmi-kuningTegas transition-colors">Jasa Animasi AI</a></li>
                         <li><a href="video-ads.html" class="hover:text-pawmi-kuningTegas transition-colors">Video Ads & Sosmed</a></li>
-                        <li><a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-kuningTegas transition-colors">Portofolio</a></li>
+                        <li><a href="portofolio.html" class="hover:text-pawmi-kuningTegas transition-colors">Portofolio</a></li>
                     </ul>
                 </div>
                 <div class="space-y-4 md:text-right">
@@ -805,6 +835,21 @@
 
             cards.forEach(card => observer.observe(card));
         });
+    </script>
+    
+    <!-- SKRIP UNTUK MENARIK DATA DARI ADMIN CMS -->
+    <script>
+        fetch('/data-video-ads.json')
+            .then(response => response.json())
+            .then(data => {
+                // Mengecek apakah admin sudah mengupload gambar mascot
+                if (data.mascot_image) {
+                    const wadahMaskot = document.getElementById('wadah-maskot');
+                    // Mengubah kotak abu-abu placeholder menjadi gambar asli
+                    wadahMaskot.innerHTML = `<img src="${data.mascot_image}" alt="Mascot Pawmi" class="w-full h-full object-cover">`;
+                }
+            })
+            .catch(error => console.log('Data CMS belum ada, menampilkan desain bawaan.'));
     </script>
 </body>
 </html>
