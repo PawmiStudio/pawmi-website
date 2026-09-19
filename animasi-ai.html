@@ -57,22 +57,38 @@
             z-index: 10;
         }
     </style>
+    
+    <!-- Skrip Netlify Identity (Biar bisa login admin dari halaman mana aja) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="antialiased selection:bg-pawmi-kuning selection:text-pawmi-cokelatTua">
+
+    <!-- Skrip Pendukung Login Admin -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
 
     <!-- HEADER / NAVIGASI -->
     <header class="sticky top-0 z-50 w-full bg-pawmi-bg/90 backdrop-blur-md border-b-2 border-pawmi-cokelatTua">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 sm:h-20">
                 <a href="index.html" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <!-- <img src="link-logo.png" alt="Logo Pawmi" class="h-8 w-auto object-contain"> -->
+                    <!-- <img src="images/logo-pawmi.png" alt="Logo Pawmi" class="h-8 w-auto object-contain"> -->
                     <span class="text-2xl font-black text-pawmi-cokelat tracking-tight">Pawmi<span class="text-pawmi-kuningTegas drop-shadow-md">.</span></span>
                 </a>
                 <nav class="hidden md:flex gap-8 font-bold text-pawmi-cokelatTua text-sm lg:text-base">
                     <a href="index.html" class="hover:text-pawmi-cokelat transition-colors">Home</a>
                     <a href="animasi-ai.html" class="text-pawmi-cokelat transition-colors border-b-2 border-pawmi-cokelat">Animasi AI</a>
-                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-cokelat transition-colors">Video Ads & Sosmed</a>
-                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-cokelat transition-colors">Portofolio</a>
+                    <a href="video-ads.html" class="hover:text-pawmi-cokelat transition-colors">Video Ads & Sosmed</a>
+                    <a href="portofolio.html" class="hover:text-pawmi-cokelat transition-colors">Portofolio</a>
                 </nav>
                 <div class="hidden sm:flex">
                     <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-6 py-2.5 text-sm font-bold text-pawmi-cokelatTua btn-neo">
@@ -120,7 +136,7 @@
             
             <!-- Buttons -->
             <div class="mt-10 flex flex-col sm:flex-row gap-5 justify-center w-full sm:w-auto">
-                <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo bg-pawmi-kuningTegas border-2 border-pawmi-cokelatTua shadow-neo-dark-sm rounded-full px-8 py-3.5 text-base font-bold text-pawmi-cokelatTua">
+                <a href="portofolio.html" class="btn-neo bg-pawmi-kuningTegas border-2 border-pawmi-cokelatTua shadow-neo-dark-sm rounded-full px-8 py-3.5 text-base font-bold text-pawmi-cokelatTua">
                     Lihat Portofolio ➔
                 </a>
                 <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo bg-white border-2 border-pawmi-cokelatTua shadow-neo-dark-sm rounded-full px-8 py-3.5 text-base font-bold text-pawmi-cokelatTua flex items-center justify-center gap-2">
@@ -209,7 +225,7 @@
         </div>
     </section>
 
-    <!-- GALERI HASIL KARYA -->
+    <!-- GALERI HASIL KARYA DINAMIS (Hanya menarik kategori Animasi & 3D) -->
     <section class="relative w-full bg-pawmi-cokelatTua py-20 lg:py-28 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -219,74 +235,15 @@
                 <p class="mt-6 text-lg font-bold text-pawmi-bg/80 max-w-2xl mx-auto">Dari konsep abstrak jadi visual epic yang bikin merinding.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Image 1</span></div>
-                    <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
-                        <span class="inline-block bg-pawmi-kuning px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">Pre-Wedding</span>
-                        <h4 class="font-bold text-pawmi-cokelatTua text-lg">Kisah Cinta Raka & Melati</h4>
-                    </div>
-                </div>
-                <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Image 2</span></div>
-                    <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
-                        <span class="inline-block bg-[#E8DDFB] px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">Birthday Gift</span>
-                        <h4 class="font-bold text-pawmi-cokelatTua text-lg">Surprise Ke-17 Sarah</h4>
-                    </div>
-                </div>
-                <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Image 3</span></div>
-                    <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
-                        <span class="inline-block bg-[#FFB5A7] px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">Anniversary</span>
-                        <h4 class="font-bold text-pawmi-cokelatTua text-lg">5 Tahun Perjalanan Budi</h4>
-                    </div>
-                </div>
-                <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Image 4</span></div>
-                    <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
-                        <span class="inline-block bg-[#A7E4FF] px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">Storytelling</span>
-                        <h4 class="font-bold text-pawmi-cokelatTua text-lg">Petualangan Sang Ksatria</h4>
-                    </div>
-                </div>
-                <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Image 5</span></div>
-                    <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
-                        <span class="inline-block bg-pawmi-kuning px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">Pre-Wedding</span>
-                        <h4 class="font-bold text-pawmi-cokelatTua text-lg">Awal Bertemu di Kampus</h4>
-                    </div>
-                </div>
-                <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Image 6</span></div>
-                    <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
-                        <span class="inline-block bg-[#E8DDFB] px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">Music Video</span>
-                        <h4 class="font-bold text-pawmi-cokelatTua text-lg">Visualizer Indie Band</h4>
-                    </div>
-                </div>
-                <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Image 7</span></div>
-                    <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
-                        <span class="inline-block bg-[#FFB5A7] px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">Farewell</span>
-                        <h4 class="font-bold text-pawmi-cokelatTua text-lg">Kenangan Lulusan 2026</h4>
-                    </div>
-                </div>
-                <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Image 8</span></div>
-                    <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
-                        <span class="inline-block bg-[#A7E4FF] px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">Promo Bisnis</span>
-                        <h4 class="font-bold text-pawmi-cokelatTua text-lg">Iklan Kafe Kopi</h4>
-                    </div>
-                </div>
-                <div class="group relative rounded-2xl border-2 border-pawmi-cokelatTua bg-white overflow-hidden shadow-[4px_4px_0_#F2D34D] hover:-translate-y-1 transition-transform">
-                    <div class="aspect-[4/5] bg-gray-200 flex items-center justify-center"><span class="font-bold text-gray-400">Image 9</span></div>
-                    <div class="absolute bottom-0 w-full bg-white border-t-2 border-pawmi-cokelatTua p-4">
-                        <span class="inline-block bg-pawmi-kuning px-2 py-1 border border-pawmi-cokelatTua text-[10px] font-black uppercase mb-1">Personal Vlog</span>
-                        <h4 class="font-bold text-pawmi-cokelatTua text-lg">Cerita Pendakian Rinjani</h4>
-                    </div>
+            <!-- Wadah Galeri yang akan diisi oleh skrip Javascript -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galeri-animasi-dinamis">
+                <div class="col-span-full text-center py-10">
+                    <p class="font-bold text-pawmi-bg/50">Memuat karya terbaru...</p>
                 </div>
             </div>
             
             <div class="mt-12 text-center">
-                <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo inline-block bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-8 py-3 text-lg font-bold text-pawmi-cokelatTua">Lihat Lebih Banyak Karya Kita ➔</a>
+                <a href="portofolio.html" class="btn-neo inline-block bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-8 py-3 text-lg font-bold text-pawmi-cokelatTua">Lihat Lebih Banyak Karya Kita ➔</a>
             </div>
         </div>
     </section>
@@ -322,7 +279,7 @@
                         <li class="flex items-center gap-3"><span class="w-6 h-6 rounded bg-green-200 border border-pawmi-cokelatTua flex items-center justify-center text-xs">✔️</span> BGM Bebas Copyright</li>
                         <li class="flex items-center gap-3 text-pawmi-cokelatTua/50 line-through"><span class="w-6 h-6 rounded bg-red-200 border border-pawmi-cokelatTua flex items-center justify-center text-xs no-underline">❌</span> Tanpa Voice Over AI</li>
                     </ul>
-                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo text-center w-full bg-pawmi-kuning border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Basic</a>
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin,%20saya%20tertarik%20dengan%20Paket%20Animasi%20AI%20Basic%20(Rp%20300rb).%20Bisa%20dibantu?" class="btn-neo text-center w-full bg-pawmi-kuning border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Basic</a>
                 </div>
 
                 <!-- PAKET PREMIUM -->
@@ -344,7 +301,7 @@
                         <li class="flex items-center gap-3"><span class="w-6 h-6 rounded bg-pawmi-kuningTegas border border-pawmi-cokelatTua flex items-center justify-center text-xs text-pawmi-cokelatTua">✔️</span> Sound Effect (SFX) & BGM</li>
                         <li class="flex items-center gap-3"><span class="w-6 h-6 rounded bg-pawmi-kuningTegas border border-pawmi-cokelatTua flex items-center justify-center text-xs text-pawmi-cokelatTua">✔️</span> 1x Revisi Minor</li>
                     </ul>
-                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo text-center w-full bg-pawmi-kuningTegas border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Premium</a>
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin,%20saya%20tertarik%20dengan%20Paket%20Animasi%20AI%20Premium%20(Rp%20400rb).%20Gimana%20prosesnya?" class="btn-neo text-center w-full bg-pawmi-kuningTegas border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Premium</a>
                 </div>
 
                 <!-- PAKET SULTAN -->
@@ -363,7 +320,7 @@
                         <li class="flex items-center gap-3"><span class="w-6 h-6 rounded bg-green-200 border border-pawmi-cokelatTua flex items-center justify-center text-xs">✔️</span> Bebas Revisi (Batas Wajar)</li>
                         <li class="flex items-center gap-3"><span class="w-6 h-6 rounded bg-green-200 border border-pawmi-cokelatTua flex items-center justify-center text-xs">✔️</span> Prioritas Pengerjaan (VIP)</li>
                     </ul>
-                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo text-center w-full bg-[#E8DDFB] border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Sultan</a>
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin,%20saya%20tertarik%20pesan%20Paket%20Animasi%20AI%20Sultan%20(Rp%201.5%20Juta).%20Bisa%20konsultasi%20dulu?" class="btn-neo text-center w-full bg-[#E8DDFB] border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-xl px-6 py-3 text-lg font-bold text-pawmi-cokelatTua">Pilih Sultan</a>
                 </div>
 
             </div>
@@ -551,7 +508,7 @@
                         </div>
                     </div>
                     <div id="faq-content-3" class="hidden px-5 pb-6 pt-0 text-pawmi-cokelatTua/80 font-medium leading-relaxed">
-                        Kamu akan mendapatkan file Video MP4 resolusi tinggi (FHD/4K) tanpa watermark yang siap diputar di layar atau di-upload ke sosmed.
+                        Kamu akan mendapatkan file Video MP4 resolusi tinggi (1080p) tanpa watermark yang siap diputar di layar atau di-upload ke sosmed.
                     </div>
                 </div>
 
@@ -605,7 +562,7 @@
                     </div>
                 </div>
                 
-                <div class="relative w-full aspect-square max-w-md mx-auto bg-pawmi-kuning border-4 border-pawmi-bg shadow-neo-dark-lg rounded-[3rem] flex items-center justify-center overflow-hidden transform rotate-2 hover:-rotate-1 transition-transform duration-300 mt-10 lg:mt-0">
+                <div id="wadah-maskot" class="relative w-full aspect-square max-w-md mx-auto bg-pawmi-kuning border-4 border-pawmi-bg shadow-neo-dark-lg rounded-[3rem] flex items-center justify-center overflow-hidden transform rotate-2 hover:-rotate-1 transition-transform duration-300 mt-10 lg:mt-0">
                     <span class="font-bold text-pawmi-cokelatTua/40 text-2xl text-center px-6">
                         [Image/Mascot] <br> Placeholder Pawmi
                     </span>
@@ -617,7 +574,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-pawmi-cokelatTua pt-16 pb-8">
+    <footer class="bg-pawmi-cokelatTua pt-16 pb-8 border-t-2 border-pawmi-bg/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                 <div class="space-y-4">
@@ -633,8 +590,8 @@
                     <ul class="space-y-2 text-sm text-pawmi-bg/80">
                         <li><a href="index.html" class="hover:text-pawmi-kuningTegas transition-colors">Home</a></li>
                         <li><a href="animasi-ai.html" class="hover:text-pawmi-kuningTegas transition-colors">Jasa Animasi AI</a></li>
-                        <li><a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-kuningTegas transition-colors">Video Ads & Sosmed</a></li>
-                        <li><a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-kuningTegas transition-colors">Portofolio</a></li>
+                        <li><a href="video-ads.html" class="hover:text-pawmi-kuningTegas transition-colors">Video Ads & Sosmed</a></li>
+                        <li><a href="portofolio.html" class="hover:text-pawmi-kuningTegas transition-colors">Portofolio</a></li>
                     </ul>
                 </div>
                 <div class="space-y-4 md:text-right">
@@ -663,14 +620,13 @@
     </footer>
 
     <script>
-        // Logika Accordion FAQ (Animasi tombol + to x)
+        // Logika Accordion FAQ
         function toggleFaq(id) {
             const content = document.getElementById('faq-content-' + id);
             const iconText = document.getElementById('faq-icon-text-' + id);
             const btn = document.getElementById('faq-btn-' + id);
             
             if (content.classList.contains('hidden')) {
-                // Saat dibuka
                 content.classList.remove('hidden');
                 iconText.innerText = 'x';
                 btn.classList.remove('bg-pawmi-kuningTegas', 'text-pawmi-cokelatTua');
@@ -678,7 +634,6 @@
                 btn.style.transform = 'translate(2px, 2px)';
                 btn.style.boxShadow = 'none';
             } else {
-                // Saat ditutup
                 content.classList.add('hidden');
                 iconText.innerText = '+';
                 btn.classList.remove('bg-pawmi-cokelatTua', 'text-white');
@@ -729,6 +684,65 @@
             }, { root: slider, threshold: 0.7 });
 
             cards.forEach(card => observer.observe(card));
+        });
+    </script>
+    
+    <!-- SKRIP NARIK GALERI PORTFOLIO & GAMBAR MASCOT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Tarik Data Mascot Khusus Halaman Animasi AI
+            fetch('/data-animasi-ai.json')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.mascot_image) {
+                        document.getElementById('wadah-maskot').innerHTML = `<img src="${data.mascot_image}" alt="Mascot Pawmi" class="w-full h-full object-cover">`;
+                    }
+                }).catch(err => console.log("Mascot belum diset di CMS."));
+
+            // 2. Tarik Data Portofolio (HANYA Kategori Animasi & 3D)
+            fetch('/data-portofolio.json')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.videos && data.videos.length > 0) {
+                        const galeriContainer = document.getElementById('galeri-animasi-dinamis');
+                        let htmlContent = '';
+                        
+                        // Filter karya yang kategorinya animasi atau 3d saja
+                        const animasiVideos = data.videos.filter(v => v.kategori === 'animasi' || v.kategori === '3d');
+                        
+                        // Batasi tampil maksimal 6 video saja di halaman ini
+                        const videosToDisplay = animasiVideos.slice(0, 6);
+                        
+                        if (videosToDisplay.length > 0) {
+                            videosToDisplay.forEach(video => {
+                                let badgeBg = video.kategori === 'animasi' ? 'bg-pawmi-kuning' : 'bg-[#A7E4FF]';
+                                let badgeText = video.kategori === 'animasi' ? 'Animasi 2D' : '3D Design';
+                                const thumbUrl = `https://img.youtube.com/vi/${video.youtube_id}/maxresdefault.jpg`;
+                                const watchUrl = `https://www.youtube.com/watch?v=${video.youtube_id}`;
+
+                                htmlContent += `
+                                <a href="${watchUrl}" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 block">
+                                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                                        <img src="${thumbUrl}" alt="${video.title}" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/${video.youtube_id}/hqdefault.jpg'">
+                                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100">
+                                                <svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-6">
+                                        <span class="inline-block ${badgeBg} px-3 py-1 rounded-md border-2 border-pawmi-cokelatTua text-xs font-black uppercase mb-3">${badgeText}</span>
+                                        <h4 class="font-black text-pawmi-cokelatTua text-xl leading-tight">${video.title}</h4>
+                                    </div>
+                                </a>`;
+                            });
+                            galeriContainer.innerHTML = htmlContent;
+                        } else {
+                            galeriContainer.innerHTML = `<div class="col-span-full text-center py-10"><p class="font-bold text-pawmi-cokelatTua/50">Karya animasi segera hadir.</p></div>`;
+                        }
+                    }
+                }).catch(err => console.log("Belum ada portofolio di CMS."));
         });
     </script>
 </body>
