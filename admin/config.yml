@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  - name: "data_web"
+    label: "Database Website"
+    files:
+      - label: "Karya Portofolio"
+        name: "portofolio"
+        file: "data-portofolio.json"
+        fields:
+          - label: "Daftar Video Portofolio"
+            name: "videos"
+            widget: "list"
+            fields:
+              - {label: "Judul Video", name: "title", widget: "string"}
+              - {label: "Kategori (Pilih salah satu)", name: "kategori", widget: "select", options: ["animasi", "3d", "ads", "sosmed"]}
+              - {label: "ID Video YouTube (Contoh: dQw4w9WgXcQ)", name: "youtube_id", widget: "string"}
