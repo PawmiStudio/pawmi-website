@@ -68,9 +68,21 @@
             z-index: 10;
         }
     </style>
+    <!-- Skrip Netlify Identity untuk Login Admin -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
-<body class="antialiased selection:bg-pawmi-kuning selection:text-pawmi-cokelatTua bg-[linear-gradient(to_right,#9E7B5415_1px,transparent_1px),linear-gradient(to_bottom,#9E7B5415_1px,transparent_1px)] bg-[size:36px_36px]">
-
+<body class="antialiased selection:bg-pawmi-kuning selection:text-pawmi-cokelatTua">
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
     <!-- HEADER / NAVIGASI -->
     <header class="sticky top-0 z-50 w-full bg-pawmi-bg/80 backdrop-blur-md border-b-2 border-pawmi-cokelatTua">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
