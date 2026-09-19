@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawmi Studio - Custom AI Video</title>
+    
+    <!-- Memanggil Font Chillax -->
+    <link href="https://api.fontshare.com/v2/css?f[]=chillax@400,600,700,900&display=swap" rel="stylesheet">
+    
+    <!-- Memanggil Mesin Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfigurasi Warna Sesuai Logo Pawmi Studio -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Chillax', 'sans-serif'],
+                    },
+                    colors: {
+                        pawmi: {
+                            cokelat: '#9E7B54', 
+                            cokelatTua: '#4A3723', 
+                            kuning: '#F8E8A5',
+                            kuningTegas: '#F2D34D',
+                            bg: '#FEFCF7',      
+                        }
+                    },
+                    boxShadow: {
+                        'neo-sm': '2px 2px 0px 0px #9E7B54',
+                        'neo-md': '4px 4px 0px 0px #9E7B54',
+                        'neo-lg': '8px 8px 0px 0px #9E7B54',
+                        'neo-dark-sm': '2px 2px 0px 0px #4A3723',
+                        'neo-dark-md': '4px 4px 0px 0px #4A3723',
+                        'neo-dark-lg': '8px 8px 0px 0px #4A3723',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #FEFCF7; color: #4A3723; overflow-x: hidden; }
+        .btn-neo { transition: all 0.15s ease-in-out; }
+        .btn-neo:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #4A3723;
+        }
+        .btn-neo:active {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+        
+        /* HIDE SCROLLBAR TAPI TETAP BISA SCROLL */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* EFEK BLUR TESTIMONI */
+        .testi-card {
+            transition: all 0.5s ease-out;
+        }
+        .testi-active {
+            transform: scale(1) !important;
+            opacity: 1 !important;
+            filter: blur(0px) !important;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-pawmi-kuning selection:text-pawmi-cokelatTua bg-[linear-gradient(to_right,#9E7B5415_1px,transparent_1px),linear-gradient(to_bottom,#9E7B5415_1px,transparent_1px)] bg-[size:36px_36px]">
+
+    <!-- HEADER / NAVIGASI -->
+    <header class="sticky top-0 z-50 w-full bg-pawmi-bg/80 backdrop-blur-md border-b-2 border-pawmi-cokelatTua">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <!-- CARA PAKAI LOGO CUSTOM: Hapus tanda "<!--" di bawah dan masukkan link gambar Anda -->
+                    <!-- <img src="link-gambar-logo-anda.png" alt="Logo Pawmi" class="h-8 w-auto object-contain"> -->
+                    <span class="text-2xl font-black text-pawmi-cokelat tracking-tight">Pawmi<span class="text-pawmi-kuningTegas drop-shadow-md">.</span></span>
+                </a>
+                
+                <nav class="hidden md:flex gap-8 font-bold text-pawmi-cokelatTua text-sm lg:text-base">
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-cokelat transition-colors">Home</a>
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-cokelat transition-colors">Animasi AI</a>
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-cokelat transition-colors">Video Ads & Sosmed</a>
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-cokelat transition-colors">Portofolio</a>
+                </nav>
+
+                <div class="hidden sm:flex">
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="bg-white border-2 border-pawmi-cokelatTua shadow-neo-dark-sm rounded-full px-6 py-2.5 text-sm font-bold text-pawmi-cokelatTua btn-neo">
+                        Tanya Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 overflow-hidden">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="flex flex-col gap-8 text-center lg:text-left z-10">
+                <h1 class="text-5xl sm:text-6xl lg:text-[72px] font-black text-pawmi-cokelatTua leading-[1.1]">
+                    Bikin Video AI Custom <br>
+                    <span class="inline-block bg-pawmi-kuningTegas text-pawmi-cokelatTua px-6 py-4 sm:px-8 sm:py-5 mt-6 border-2 border-pawmi-cokelatTua shadow-neo-dark-md transform -rotate-2 text-left leading-[1.1] whitespace-nowrap">
+                        Bareng <br>
+                        Pawmi Studio!
+                    </span>
+                </h1>
+                
+                <p class="text-lg font-medium max-w-xl mx-auto lg:mx-0 leading-relaxed bg-pawmi-bg/50 backdrop-blur-sm p-2 rounded-xl">
+                    Punya ide liar buat konten sosmed, animasi, atau iklan tapi mentok di eksekusi? Pawmi Studio siap bikinin video <span class="font-bold text-pawmi-cokelat text-xl">custom pake AI</span> dengan style bebas sesukamu. Sat-set, keren, dan beda dari yang lain!
+                </p>
+                
+                <div class="flex justify-center lg:justify-start">
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo bg-pawmi-kuningTegas border-2 border-pawmi-cokelatTua shadow-neo-dark-lg rounded-full px-8 py-4 text-lg font-black text-pawmi-cokelatTua flex items-center gap-3">
+                        Ceritain Idenya Di Sini ➔
+                    </a>
+                </div>
+                
+                <div class="flex justify-center lg:justify-start gap-6 sm:gap-12 pt-6 border-t-2 border-pawmi-cokelat/20 mt-2">
+                    <div>
+                        <p class="text-3xl sm:text-4xl font-black text-pawmi-cokelatTua">Bebas</p>
+                        <p class="text-sm font-bold text-pawmi-cokelatTua/60 mt-1 uppercase tracking-wider">Pilih Style</p>
+                    </div>
+                    <div class="w-0.5 bg-pawmi-cokelat/30"></div>
+                    <div>
+                        <p class="text-3xl sm:text-4xl font-black text-pawmi-cokelatTua">100%</p>
+                        <p class="text-sm font-bold text-pawmi-cokelatTua/60 mt-1 uppercase tracking-wider">Custom Ide</p>
+                    </div>
+                    <div class="w-0.5 bg-pawmi-cokelat/30"></div>
+                    <div>
+                        <p class="text-3xl sm:text-4xl font-black text-pawmi-cokelatTua">5<span class="text-pawmi-kuningTegas drop-shadow-md">★</span></p>
+                        <p class="text-sm font-bold text-pawmi-cokelatTua/60 mt-1 uppercase tracking-wider">Rating Klien</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center gap-8 relative">
+                <div class="grid grid-cols-2 gap-4 w-full max-w-md relative z-10">
+                    <div class="aspect-square bg-white border-2 border-pawmi-cokelatTua shadow-neo-dark-md rounded-[2rem] flex items-center justify-center overflow-hidden hover:-translate-y-1 transition-transform">
+                        <span class="text-pawmi-cokelat/60 font-bold text-center px-4">Tempat Gambar <br> Anime AI</span>
+                    </div>
+                    <div class="aspect-square bg-[#FDF9EA] border-2 border-pawmi-cokelatTua shadow-neo-dark-md rounded-[2rem] flex items-center justify-center overflow-hidden transform translate-y-8 hover:translate-y-6 transition-transform">
+                        <span class="text-pawmi-cokelat/60 font-bold text-center px-4">Tempat Gambar <br> 3D Design</span>
+                    </div>
+                    <div class="col-span-2 h-44 bg-pawmi-kuning border-2 border-pawmi-cokelatTua shadow-neo-dark-md rounded-[2rem] flex items-center justify-center mt-6 overflow-hidden hover:-translate-y-1 transition-transform">
+                        <span class="text-pawmi-cokelatTua/60 font-bold text-center px-4">Tempat Cuplikan <br> Video Ads Realistik</span>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="mt-2 btn-neo bg-white border-2 border-pawmi-cokelatTua shadow-neo-dark-sm rounded-full px-6 py-3 text-base font-bold text-pawmi-cokelatTua z-10">
+                    Lihat Hasil Karya Kita ➔
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECTION KEUNGGULAN PAWMI -->
+    <section class="relative w-full bg-pawmi-cokelatTua py-20 lg:py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-14 grid items-end gap-6 md:grid-cols-2">
+                <h2 class="font-chillax text-5xl md:text-6xl font-black [text-shadow:-1px_-1px_0_#2C221B,1px_-1px_0_#2C221B,-1px_1px_0_#2C221B,1px_1px_0_#2C221B,-4px_3px_0_#2C221B]">
+                    <span class="text-pawmi-bg">Kenapa Pilih</span> <br> 
+                    <span class="text-pawmi-kuningTegas">Pawmi Studio?</span>
+                </h2>
+                <p class="text-lg font-semibold text-pawmi-bg/90 mb-2">
+                    Bukan sekadar agensi biasa. Kita kasih kombinasi kreativitas bebas batas dan kecepatan AI buat eksekusi semua idemu.
+                </p>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="relative rounded-3xl border-2 border-pawmi-kuningTegas bg-white p-6 text-center shadow-[6px_6px_0_#F2D34D] transition-transform duration-200 hover:-translate-y-1">
+                    <div class="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-pawmi-kuningTegas text-lg font-black text-pawmi-cokelatTua">1</div>
+                    <div class="mx-auto mt-8 flex h-20 w-20 items-center justify-center rounded-full bg-pawmi-kuningTegas">
+                        <svg class="h-9 w-9 text-pawmi-cokelatTua" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"></path><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>
+                    </div>
+                    <h3 class="mt-4 text-2xl font-bold text-pawmi-cokelatTua">Bebas Style</h3>
+                    <p class="mt-2 text-base font-medium text-pawmi-cokelatTua/80">Dari anime, 3D, sampai realistik, semua bisa kita jabanin sesuai vibes yang kamu mau.</p>
+                </div>
+
+                <div class="relative rounded-3xl border-2 border-pawmi-cokelat bg-white p-6 text-center shadow-[6px_6px_0_#9E7B54] transition-transform duration-200 hover:-translate-y-1">
+                    <div class="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-pawmi-cokelat text-lg font-black text-white">2</div>
+                    <div class="mx-auto mt-8 flex h-20 w-20 items-center justify-center rounded-full bg-pawmi-cokelat">
+                        <svg class="h-9 w-9 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                    </div>
+                    <h3 class="mt-4 text-2xl font-bold text-pawmi-cokelatTua">Proses Sat-Set</h3>
+                    <p class="mt-2 text-base font-medium text-pawmi-cokelatTua/80">Nggak pake lama. Bantuan AI bikin workflow kita super cepat tanpa ngorbanin kualitas visual.</p>
+                </div>
+
+                <div class="relative rounded-3xl border-2 border-pawmi-kuningTegas bg-white p-6 text-center shadow-[6px_6px_0_#F2D34D] transition-transform duration-200 hover:-translate-y-1">
+                    <div class="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-pawmi-kuningTegas text-lg font-black text-pawmi-cokelatTua">3</div>
+                    <div class="mx-auto mt-8 flex h-20 w-20 items-center justify-center rounded-full bg-pawmi-kuningTegas">
+                        <svg class="h-9 w-9 text-pawmi-cokelatTua" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg>
+                    </div>
+                    <h3 class="mt-4 text-2xl font-bold text-pawmi-cokelatTua">Anti Ribet</h3>
+                    <p class="mt-2 text-base font-medium text-pawmi-cokelatTua/80">Hasil kurang pas? Tenang, kita bantu poles dan sesuaikan sampai kamu bener-bener sreg.</p>
+                </div>
+
+                <div class="relative rounded-3xl border-2 border-pawmi-cokelat bg-white p-6 text-center shadow-[6px_6px_0_#9E7B54] transition-transform duration-200 hover:-translate-y-1">
+                    <div class="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-pawmi-cokelat text-lg font-black text-white">4</div>
+                    <div class="mx-auto mt-8 flex h-20 w-20 items-center justify-center rounded-full bg-pawmi-cokelat">
+                        <svg class="h-9 w-9 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"></path><path d="M11 3 8 9l4 13"></path><path d="M13 3l3 6-4 13"></path></svg>
+                    </div>
+                    <h3 class="mt-4 text-2xl font-bold text-pawmi-cokelatTua">Harga Fleksibel</h3>
+                    <p class="mt-2 text-base font-medium text-pawmi-cokelatTua/80">Dapet kualitas premium ala agensi besar, tapi dengan budget yang tetap aman di kantong.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PENGENALAN JASA -->
+    <section class="relative w-full bg-pawmi-bg py-20 lg:py-28 border-y-2 border-pawmi-cokelatTua overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-chillax text-4xl sm:text-5xl font-black text-pawmi-cokelatTua [text-shadow:-1px_-1px_0_#fff,1px_-1px_0_#fff,-1px_1px_0_#fff,1px_1px_0_#fff,-2px_2px_0_#fff]">
+                    Pilihan Jasa <span class="text-pawmi-cokelat">Andalan Kita</span>
+                </h2>
+                <p class="mt-4 text-lg font-bold text-pawmi-cokelatTua/70 max-w-2xl mx-auto">
+                    Apapun kebutuhan videomu, kita siap eksekusi.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12">
+                <div class="group flex flex-col overflow-hidden rounded-[2.5rem] border-4 border-pawmi-cokelatTua bg-pawmi-kuning shadow-neo-dark-lg transition-transform duration-300 hover:-translate-y-2">
+                    <div class="relative aspect-[16/10] w-full overflow-hidden border-b-4 border-pawmi-cokelatTua bg-white flex items-center justify-center">
+                        <span class="font-bold text-pawmi-cokelatTua/40 text-xl">Image Animasi Custom AI</span>
+                    </div>
+                    <div class="flex flex-col p-8 flex-grow">
+                        <h3 class="mb-4 text-3xl font-black text-pawmi-cokelatTua">Animasi Custom AI</h3>
+                        <p class="mb-8 font-medium leading-relaxed text-pawmi-cokelatTua/80 flex-grow">
+                            Bikin video animasi 2D, 3D, gaya anime, atau style unik lainnya buat storytelling yang engaging. Cocok banget buat Music Video, explainer, atau sekadar konten seru-seruan.
+                        </p>
+                        <!-- LINK MENUJU HALAMAN ANIMASI AI NANTI -->
+                        <a href="animasi-ai.html" class="btn-neo inline-block text-center w-full sm:w-auto bg-white border-2 border-pawmi-cokelatTua shadow-neo-dark-sm rounded-xl px-8 py-3 text-lg font-bold text-pawmi-cokelatTua">
+                            Detail Animasi Custom ➔
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group flex flex-col overflow-hidden rounded-[2.5rem] border-4 border-pawmi-cokelatTua bg-white shadow-neo-dark-lg transition-transform duration-300 hover:-translate-y-2">
+                    <div class="relative aspect-[16/10] w-full overflow-hidden border-b-4 border-pawmi-cokelatTua bg-pawmi-bg flex items-center justify-center">
+                        <span class="font-bold text-pawmi-cokelatTua/40 text-xl">Image Video Ads Realistik</span>
+                    </div>
+                    <div class="flex flex-col p-8 flex-grow">
+                        <h3 class="mb-4 text-3xl font-black text-pawmi-cokelatTua">Video AI Ads & Sosmed</h3>
+                        <p class="mb-8 font-medium leading-relaxed text-pawmi-cokelatTua/80 flex-grow">
+                            Tingkatin sales dan interaksi audiens pake video iklan atau konten TikTok/IG Reels yang eye-catching, realistik, dan profesional. Auto scroll-stopping!
+                        </p>
+                        <!-- LINK MENUJU HALAMAN VIDEO ADS NANTI -->
+                        <a href="video-ads.html" class="btn-neo inline-block text-center w-full sm:w-auto bg-pawmi-kuningTegas border-2 border-pawmi-cokelatTua shadow-neo-dark-sm rounded-xl px-8 py-3 text-lg font-bold text-pawmi-cokelatTua">
+                            Detail Video Ads ➔
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION TESTIMONI (REVISI SHADOW TEKS) -->
+    <section class="relative w-full bg-pawmi-kuningTegas py-20 lg:py-28 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-[0.08] text-6xl flex flex-wrap justify-around items-center gap-16 select-none -z-0">
+            <span>🎬</span><span>🎥</span><span>✨</span><span>🤖</span><span>🎞️</span><span>💡</span>
+            <span>✨</span><span>🎬</span><span>💡</span><span>🎥</span><span>🎞️</span><span>🤖</span>
+            <span>🎥</span><span>🤖</span><span>🎬</span><span>✨</span><span>💡</span><span>🎞️</span>
+        </div>
+        
+        <div class="max-w-[1400px] mx-auto relative z-10">
+            <!-- REVISI PADA SHADOW TEKS DI SINI -->
+            <h2 class="text-center font-chillax text-4xl sm:text-5xl font-black mb-12">
+                <span class="text-pawmi-bg [text-shadow:-1px_-1px_0_#4A3723,1px_-1px_0_#4A3723,-1px_1px_0_#4A3723,1px_1px_0_#4A3723,-4px_3px_0_#4A3723]">Kata</span> 
+                <span class="text-pawmi-cokelatTua [text-shadow:-1px_-1px_0_#FEFCF7,1px_-1px_0_#FEFCF7,-1px_1px_0_#FEFCF7,1px_1px_0_#FEFCF7,-4px_3px_0_#FEFCF7]">Klien Kita</span>
+            </h2>
+
+            <div id="testi-slider" class="flex overflow-x-auto hide-scroll snap-x snap-mandatory gap-6 pb-12 pt-8 px-[10vw] sm:px-[30vw] md:px-[35vw]">
+                <!-- Card 1 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-pawmi-kuning text-xl">😎</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Raka</p>
+                                <p class="text-xs font-semibold text-pawmi-cokelat">@raka.id</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Pas kemarin pake Pawmi buat event kampus, gila sih hasilnya rapi bener dan sat-set banget. AI-nya kerasa premium!"
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#FFB5A7] text-xl">✨</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Melati</p>
+                                <p class="text-xs font-semibold text-pawmi-cokelat">@melati_skincare</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Pilihan stylenya banyak banget! Minta dibikinin video ala anime Ghibli buat promo skincare, hasilnya di luar ekspektasi."
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#A7E4FF] text-xl">📈</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Fajar</p>
+                                <p class="text-xs font-semibold text-pawmi-cokelat">@fajar.agency</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Jujur dari sisi bisnis, ngebantu banget buat bikin materi ads massal. Engagement naik drastis berkat visualnya yang hyper-realistic."
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-pawmi-bg text-xl">🤝</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Indah</p>
+                                <p class="text-xs font-semibold text-pawmi-cokelat">@indah.creative</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Gokil sih layanannya. Minta revisi warna dikit langsung sat-set diedit. Adminnya juga ramah parah. Recommended!"
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#E8DDFB] text-xl">🔥</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Kevin</p>
+                                <p class="text-xs font-semibold text-pawmi-cokelat">@kevin.studio</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Awalnya ragu bikin animasi 3D karena mikir harganya mahal, eh pas liat hasilnya mindblowing. Premium abis dengan budget aman."
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-pawmi-kuning text-xl">🎉</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Sarah</p>
+                                <p class="text-xs font-semibold text-pawmi-cokelat">@sarah_corp</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Bikin video ucapan ulang tahun perusahaan pakai karakter maskot kita. Klien pada muji katanya kreatif banget!"
+                    </p>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#A7E4FF] text-xl">🚀</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Budi</p>
+                                <p class="text-xs font-semibold text-pawmi-cokelat">@budi.market</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Workflow-nya jelas. Dari storyboard sampai hasil akhir, komunikasinya lancar. Video ads IG Reels gue tembus fyp."
+                    </p>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#FFB5A7] text-xl">🙌</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Clara</p>
+                                <p class="text-xs font-semibold text-pawmi-cokelat">@clara.vlogs</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Buat lo yang butuh konten video tapi ga jago ngedit atau ga punya alat, Pawmi Studio beneran jadi penyelamat hidup!"
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tombol Panah Navigasi Testimoni -->
+            <div class="mt-2 flex items-center justify-center gap-4">
+                <button id="btn-prev" class="btn-neo flex h-12 w-12 items-center justify-center rounded-full border-2 border-pawmi-cokelatTua bg-white text-pawmi-cokelatTua shadow-neo-dark-sm z-10" aria-label="Sebelumnya">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"></path></svg>
+                </button>
+                <button id="btn-next" class="btn-neo flex h-12 w-12 items-center justify-center rounded-full border-2 border-pawmi-cokelatTua bg-white text-pawmi-cokelatTua shadow-neo-dark-sm z-10" aria-label="Berikutnya">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"></path></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION BOTTOM CTA -->
+    <section class="relative w-full bg-pawmi-bg py-20 lg:py-24 border-t-2 border-pawmi-cokelatTua">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl sm:text-5xl font-black text-pawmi-cokelatTua leading-tight mb-8">
+                Punya ide video keren <br>tapi bingung mulainya dari mana?
+            </h2>
+            <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="btn-neo inline-block bg-pawmi-cokelatTua border-2 border-pawmi-cokelat shadow-neo-lg rounded-full px-10 py-5 text-xl font-black text-pawmi-bg">
+                Konsultasi Gratis Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-pawmi-cokelatTua border-t-2 border-pawmi-cokelatTua pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div class="space-y-4">
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="flex items-center gap-2">
+                        <!-- <img src="link-gambar-logo-anda.png" alt="Logo Pawmi" class="h-8 w-auto object-contain"> -->
+                        <span class="text-2xl font-black text-pawmi-bg tracking-tight">Pawmi<span class="text-pawmi-kuningTegas">.</span></span>
+                    </a>
+                    <p class="text-pawmi-bg/80 text-sm leading-relaxed max-w-xs">
+                        Studio visual AI custom untuk segala kebutuhan videomu. Eksekusi cepat, style bebas batas.
+                    </p>
+                </div>
+                
+                <div class="space-y-4 md:text-center">
+                    <h3 class="text-lg font-bold text-pawmi-bg">Navigasi</h3>
+                    <ul class="space-y-2 text-sm text-pawmi-bg/80">
+                        <li><a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-kuningTegas transition-colors">Home</a></li>
+                        <li><a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-kuningTegas transition-colors">Jasa Animasi AI</a></li>
+                        <li><a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-kuningTegas transition-colors">Video Ads & Sosmed</a></li>
+                        <li><a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-kuningTegas transition-colors">Portofolio</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4 md:text-right">
+                    <h3 class="text-lg font-bold text-pawmi-bg">Kontak & Sosmed</h3>
+                    <div class="flex md:justify-end gap-4 mt-2">
+                        <!-- Instagram -->
+                        <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="w-10 h-10 rounded-full bg-pawmi-bg/10 border border-pawmi-bg/20 flex items-center justify-center text-pawmi-bg hover:bg-pawmi-kuningTegas hover:text-pawmi-cokelatTua hover:border-pawmi-kuningTegas transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="w-10 h-10 rounded-full bg-pawmi-bg/10 border border-pawmi-bg/20 flex items-center justify-center text-pawmi-bg hover:bg-pawmi-kuningTegas hover:text-pawmi-cokelatTua hover:border-pawmi-kuningTegas transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg>
+                        </a>
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="w-10 h-10 rounded-full bg-pawmi-bg/10 border border-pawmi-bg/20 flex items-center justify-center text-pawmi-bg hover:bg-pawmi-kuningTegas hover:text-pawmi-cokelatTua hover:border-pawmi-kuningTegas transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-pawmi-bg/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-pawmi-bg/60">
+                <p>© 2026 Pawmi Studio. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-bg transition-colors">Syarat & Ketentuan</a>
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-bg transition-colors">Kebijakan Privasi</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('testi-slider');
+            const btnPrev = document.getElementById('btn-prev');
+            const btnNext = document.getElementById('btn-next');
+            const cards = slider.querySelectorAll('.testi-card');
+            const scrollAmount = 330; 
+
+            btnNext.addEventListener('click', () => { slider.scrollBy({ left: scrollAmount, behavior: 'smooth' }); });
+            btnPrev.addEventListener('click', () => { slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); });
+
+            let autoSlide = setInterval(() => {
+                if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+                    slider.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+            }, 3000);
+
+            slider.addEventListener('mouseenter', () => clearInterval(autoSlide));
+            slider.addEventListener('mouseleave', () => {
+                autoSlide = setInterval(() => {
+                    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+                        slider.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    }
+                }, 3000);
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('testi-active');
+                    } else {
+                        entry.target.classList.remove('testi-active');
+                    }
+                });
+            }, { root: slider, threshold: 0.7 });
+
+            cards.forEach(card => observer.observe(card));
+        });
+    </script>
+</body>
+</html>
