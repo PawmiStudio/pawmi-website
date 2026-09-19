@@ -36,3 +36,9 @@ collections:
         file: "data-video-ads.json"
         fields:
           - {label: "Gambar Mascot Bawah", name: "mascot_image", widget: "image", required: false}
+
+      - label: "Edit Halaman Animasi AI"
+        name: "page_animasi_ai"
+        file: "data-animasi-ai.json"
+        fields:
+          - {label: "Gambar Mascot Bawah", name: "mascot_image", widget: "image", required: false}
