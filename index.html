@@ -68,21 +68,8 @@
             z-index: 10;
         }
     </style>
-    <!-- Skrip Netlify Identity untuk Login Admin -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="antialiased selection:bg-pawmi-kuning selection:text-pawmi-cokelatTua">
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
     <!-- HEADER / NAVIGASI -->
     <header class="sticky top-0 z-50 w-full bg-pawmi-bg/80 backdrop-blur-md border-b-2 border-pawmi-cokelatTua">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,7 +98,7 @@
 
     <!-- HERO SECTION -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 overflow-hidden">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div class="flex flex-col gap-8 text-center lg:text-left z-10">
                 <h1 class="text-5xl sm:text-6xl lg:text-[72px] font-black text-pawmi-cokelatTua leading-[1.1]">
                     Bikin Video AI Custom <br>
@@ -149,21 +136,15 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-center gap-8 relative">
-                <div class="grid grid-cols-2 gap-4 w-full max-w-md relative z-10">
-                    <div id="hero-img-1" class="aspect-square bg-white border-2 border-pawmi-cokelatTua shadow-neo-dark-md rounded-[2rem] flex items-center justify-center overflow-hidden hover:-translate-y-1 transition-transform">
-                        <span class="text-pawmi-cokelat/60 font-bold text-center px-4">Tempat Gambar <br> Anime AI</span>
-                    </div>
-                    <div id="hero-img-2" class="aspect-square bg-[#FDF9EA] border-2 border-pawmi-cokelatTua shadow-neo-dark-md rounded-[2rem] flex items-center justify-center overflow-hidden transform translate-y-8 hover:translate-y-6 transition-transform">
-                        <span class="text-pawmi-cokelat/60 font-bold text-center px-4">Tempat Gambar <br> 3D Design</span>
-                    </div>
-                    <div id="hero-img-3" class="col-span-2 h-44 bg-pawmi-kuning border-2 border-pawmi-cokelatTua shadow-neo-dark-md rounded-[2rem] flex items-center justify-center mt-6 overflow-hidden hover:-translate-y-1 transition-transform">
-                        <span class="text-pawmi-cokelatTua/60 font-bold text-center px-4">Tempat Cuplikan <br> Video Ads Realistik</span>
-                    </div>
+            <div class="flex flex-col items-center justify-center relative w-full mt-10 lg:mt-0">
+                <!-- GAMBAR HERO UTAMA (Tanpa Kotak, Responsif & Mengambang) -->
+                <div class="w-full max-w-[520px] sm:max-w-sm md:max-w-lg lg:max-w-[800px] xl:max-w-[900px] relative z-10 flex justify-center hover:scale-105 transition-transform duration-500">
+                    <!-- Drop-shadow akan mengikuti potongan gambar PNG transparan -->
+                    <img src="images/Home-Headline.png" alt="Pawmi Studio Hero" class="w-full h-auto object-contain drop-shadow-[0_15px_25px_rgba(74,55,35,0.4)]">
                 </div>
                 
-                <!-- LINK INI DIBENARKAN MENGARAH KE PORTOFOLIO -->
-                <a href="portofolio.html" class="mt-2 btn-neo bg-white border-2 border-pawmi-cokelatTua shadow-neo-dark-sm rounded-full px-6 py-3 text-base font-bold text-pawmi-cokelatTua z-10">
+                <!-- TOMBOL LIHAT PORTOFOLIO DI BAWAH GAMBAR -->
+                <a href="portofolio.html" class="mt-8 btn-neo bg-white border-2 border-pawmi-cokelatTua shadow-neo-dark-sm rounded-full px-8 py-3.5 text-base font-bold text-pawmi-cokelatTua z-10">
                     Lihat Hasil Karya Kita ➔
                 </a>
             </div>
@@ -236,9 +217,10 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12">
+                <!-- GAMBAR JASA 1: ANIMASI AI -->
                 <div class="group flex flex-col overflow-hidden rounded-[2.5rem] border-4 border-pawmi-cokelatTua bg-pawmi-kuning shadow-neo-dark-lg transition-transform duration-300 hover:-translate-y-2">
-                    <div id="jasa-img-1" class="relative aspect-[16/10] w-full overflow-hidden border-b-4 border-pawmi-cokelatTua bg-white flex items-center justify-center">
-                        <span class="font-bold text-pawmi-cokelatTua/40 text-xl">Image Animasi Custom AI</span>
+                    <div class="relative aspect-[16/10] w-full overflow-hidden border-b-4 border-pawmi-cokelatTua bg-white flex items-center justify-center">
+                        <img src="images/Home-Animation Thumbnail.png" alt="Jasa Animasi AI" class="w-full h-full object-cover">
                     </div>
                     <div class="flex flex-col p-8 flex-grow">
                         <h3 class="mb-4 text-3xl font-black text-pawmi-cokelatTua">Animasi Custom AI</h3>
@@ -251,9 +233,10 @@
                     </div>
                 </div>
 
+                <!-- GAMBAR JASA 2: VIDEO ADS -->
                 <div class="group flex flex-col overflow-hidden rounded-[2.5rem] border-4 border-pawmi-cokelatTua bg-white shadow-neo-dark-lg transition-transform duration-300 hover:-translate-y-2">
-                    <div id="jasa-img-2" class="relative aspect-[16/10] w-full overflow-hidden border-b-4 border-pawmi-cokelatTua bg-pawmi-bg flex items-center justify-center">
-                        <span class="font-bold text-pawmi-cokelatTua/40 text-xl">Image Video Ads Realistik</span>
+                    <div class="relative aspect-[16/10] w-full overflow-hidden border-b-4 border-pawmi-cokelatTua bg-pawmi-bg flex items-center justify-center">
+                        <img src="images/Home-Ads Content Thumbnail.png" alt="Jasa Video Ads & Sosmed" class="w-full h-full object-cover">
                     </div>
                     <div class="flex flex-col p-8 flex-grow">
                         <h3 class="mb-4 text-3xl font-black text-pawmi-cokelatTua">Video AI Ads & Sosmed</h3>
@@ -290,14 +273,13 @@
                         <div class="flex items-center gap-3">
                             <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-pawmi-kuning text-xl">😎</div>
                             <div>
-                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Raka</p>
-                                <p class="text-xs font-semibold text-pawmi-cokelat">@raka.id</p>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Bima</p>
                             </div>
                         </div>
                         <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
                     </div>
                     <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
-                        "Pas kemarin pake Pawmi buat event kampus, gila sih hasilnya rapi bener dan sat-set banget. AI-nya kerasa premium!"
+                        "Asli, awalnya agak ragu nyoba video AI karena takut kelihatan kaku, tapi pas lihat hasilnya dari Pawmi... gila sih, mulus banget. Storyboard yang dibikinin juga pas banget sama pesan campaign gue."
                     </p>
                 </div>
 
@@ -307,14 +289,13 @@
                         <div class="flex items-center gap-3">
                             <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#FFB5A7] text-xl">✨</div>
                             <div>
-                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Melati</p>
-                                <p class="text-xs font-semibold text-pawmi-cokelat">@melati_skincare</p>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Sarah</p>
                             </div>
                         </div>
                         <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
                     </div>
                     <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
-                        "Pilihan stylenya banyak banget! Minta dibikinin video ala anime Ghibli buat promo skincare, hasilnya di luar ekspektasi."
+                        "Video promosi produk kosmetik aku jadi kelihatan super elegan. Warna dan vibe-nya dapet banget, persis kayak brief awal. Prosesnya sat-set, ngga perlu nunggu lama."
                     </p>
                 </div>
 
@@ -322,16 +303,15 @@
                 <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
                     <div class="flex items-start justify-between gap-4">
                         <div class="flex items-center gap-3">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#A7E4FF] text-xl">📈</div>
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#A7E4FF] text-xl">🚀</div>
                             <div>
-                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Fajar</p>
-                                <p class="text-xs font-semibold text-pawmi-cokelat">@fajar.agency</p>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Kevin</p>
                             </div>
                         </div>
                         <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
                     </div>
                     <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
-                        "Jujur dari sisi bisnis, ngebantu banget buat bikin materi ads massal. Engagement naik drastis berkat visualnya yang hyper-realistic."
+                        "Udah nyoba bikin ads di beberapa tempat, tapi baru kali ini ngerasa beneran di-handle sama profesional. Kualitas video AI-nya beda level, engagement rate naik lumayan drastis."
                     </p>
                 </div>
 
@@ -341,14 +321,13 @@
                         <div class="flex items-center gap-3">
                             <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-pawmi-bg text-xl">🤝</div>
                             <div>
-                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Indah</p>
-                                <p class="text-xs font-semibold text-pawmi-cokelat">@indah.creative</p>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Dina</p>
                             </div>
                         </div>
                         <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
                     </div>
                     <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
-                        "Gokil sih layanannya. Minta revisi warna dikit langsung sat-set diedit. Adminnya juga ramah parah. Recommended!"
+                        "Adminnya responsif banget! Ngebantu dari nol sampai videonya bener-bener jadi. Pokoknya recommended banget buat yang butuh video konten tapi bingung konsep."
                     </p>
                 </div>
 
@@ -358,14 +337,163 @@
                         <div class="flex items-center gap-3">
                             <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#E8DDFB] text-xl">🔥</div>
                             <div>
-                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Kevin</p>
-                                <p class="text-xs font-semibold text-pawmi-cokelat">@kevin.studio</p>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Rizky</p>
                             </div>
                         </div>
                         <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
                     </div>
                     <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
-                        "Awalnya ragu bikin animasi 3D karena mikir harganya mahal, eh pas liat hasilnya mindblowing. Premium abis dengan budget aman."
+                        "Keren sih ini, ngebantu banget buat gue yang sering kehabisan ide konten TikTok. Videonya selalu *on point* dan nangkep audiens."
+                    </p>
+                </div>
+                <!-- Card 6 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-pawmi-kuning text-xl">💡</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Ayu</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Bikin video edukasi buat program sekolah pakai jasa Pawmi. Anak-anak suka banget sama animasinya, sangat komunikatif."
+                    </p>
+                </div>
+                <!-- Card 7 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#FFB5A7] text-xl">🤩</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Reza</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Bagus banget, *voice over* AI-nya nggak kayak robot. Bener-bener ngerasa dibacain sama orang asli."
+                    </p>
+                </div>
+                <!-- Card 8 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#A7E4FF] text-xl">👏</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Nia</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Hasil videonya bikin ngiler buat belanja hahaha. Terasa banget profesional bikin kontennya, nggak nyesel pakai jasa di sini."
+                    </p>
+                </div>
+                <!-- Card 9 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-pawmi-bg text-xl">🙌</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Ivan</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Sangat memuaskan, tim Pawmi ngerti banget brief dari saya, hasilnya cepet dan revisinya nggak ribet."
+                    </p>
+                </div>
+                <!-- Card 10 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#E8DDFB] text-xl">🎬</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Lestari</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Terbantu banget buat presentasi proyek. Animasi 3D-nya ngebantu jelasin produk yang kompleks jadi gampang dipahami."
+                    </p>
+                </div>
+                <!-- Card 11 -->
+                <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-pawmi-kuning text-xl">💯</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Rizal</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Pengerjaan tepat waktu, hasilnya jernih banget. Worth every penny lah pokoknya!"
+                    </p>
+                </div>
+                 <!-- Card 12 -->
+                 <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#FFB5A7] text-xl">🎨</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Citra</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Visualisasinya cantik banget. Semua detail diperhatikan. Terima kasih Pawmi!"
+                    </p>
+                </div>
+                 <!-- Card 13 -->
+                 <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#A7E4FF] text-xl">👍</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Hadi</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Gak ribet sama sekali proses ordernya. Tinggal kasi brief, video jadi."
+                    </p>
+                </div>
+                 <!-- Card 14 -->
+                 <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-pawmi-bg text-xl">⭐</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Siska</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Videonya lucu dan unik, cocok banget buat *brand* makanan aku."
+                    </p>
+                </div>
+                 <!-- Card 15 -->
+                 <div class="testi-card shrink-0 w-[300px] md:w-[400px] snap-center rounded-[2rem] border-2 border-pawmi-cokelatTua bg-white p-6 shadow-neo-dark-md transform scale-90 opacity-50 blur-[2px]">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-pawmi-cokelatTua bg-[#E8DDFB] text-xl">🙏</div>
+                            <div>
+                                <p class="text-lg font-bold text-pawmi-cokelatTua leading-tight">Aldo</p>
+                            </div>
+                        </div>
+                        <span class="text-4xl text-pawmi-cokelat/30 font-serif">"</span>
+                    </div>
+                    <p class="mt-4 text-sm font-medium leading-relaxed text-pawmi-cokelatTua/90">
+                        "Sukses terus Pawmi Studio, jasanya sangat menolong pengusaha kecil buat bikin iklan kece."
                     </p>
                 </div>
             </div>
@@ -378,6 +506,123 @@
                 <button id="btn-next" class="btn-neo flex h-12 w-12 items-center justify-center rounded-full border-2 border-pawmi-cokelatTua bg-white text-pawmi-cokelatTua shadow-neo-dark-sm z-10" aria-label="Berikutnya">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"></path></svg>
                 </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERI HASIL KARYA (YOUTUBE HARDCODE 6 VIDEO REQUEST) -->
+    <section class="relative w-full bg-pawmi-cokelatTua py-20 lg:py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-chillax text-4xl sm:text-5xl font-black text-pawmi-bg">
+                    Intip <span class="bg-pawmi-kuningTegas text-pawmi-cokelatTua px-3 py-1 border-2 border-pawmi-bg shadow-neo-white inline-block -rotate-2">Mahakarya</span> Kami
+                </h2>
+                <p class="mt-6 text-lg font-bold text-pawmi-bg/80 max-w-2xl mx-auto">Dari konsep abstrak jadi visual epic yang siap stop jempol audiensmu.</p>
+            </div>
+
+            <!-- Gunakan Aspect 4/5 agar frame seragam walaupun ada video landscape dan portrait/shorts -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                
+                <!-- Video 1: Boby & Caca Love Story Split Animation (Animasi) -->
+                <a href="https://www.youtube.com/watch?v=WRTGnVomuMI" target="_blank" class="group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 block">
+                    <div class="relative aspect-[4/5] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/WRTGnVomuMI/maxresdefault.jpg" alt="Boby & Caca Love Story Split Animation" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/WRTGnVomuMI/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100">
+                                <svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 relative z-20">
+                        <span class="inline-block bg-pawmi-kuning px-3 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Animasi 2D</span>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Boby & Caca Love Story Split Animation</h4>
+                    </div>
+                </a>
+
+                <!-- Video 2: Stop Motion Animation Music Video (Animasi) -->
+                <a href="https://www.youtube.com/watch?v=xmOeyPG89pY" target="_blank" class="group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 block">
+                    <div class="relative aspect-[4/5] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/xmOeyPG89pY/maxresdefault.jpg" alt="Stop Motion Animation Music Video" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/xmOeyPG89pY/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100">
+                                <svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 relative z-20">
+                        <span class="inline-block bg-pawmi-kuning px-3 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Animasi 2D</span>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Stop Motion Animation Music Video</h4>
+                    </div>
+                </a>
+
+                <!-- Video 3: The Love Story of Adel & Mumtaz (Anime) -->
+                <a href="https://www.youtube.com/watch?v=swzuK6maG3s" target="_blank" class="group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 block">
+                    <div class="relative aspect-[4/5] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/swzuK6maG3s/maxresdefault.jpg" alt="The Love Story of Adel & Mumtaz" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/swzuK6maG3s/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100">
+                                <svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 relative z-20">
+                        <span class="inline-block bg-[#A7E4FF] px-3 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Anime</span>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">The Love Story of Adel & Mumtaz</h4>
+                    </div>
+                </a>
+
+                <!-- Video 4: Realistic Ads "Kawal" (Ads) -->
+                <a href="https://www.youtube.com/watch?v=CaWX_ArDl58" target="_blank" class="group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 block">
+                    <div class="relative aspect-[4/5] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/CaWX_ArDl58/maxresdefault.jpg" alt="Realistic Ads Kawal" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/CaWX_ArDl58/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100">
+                                <svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 relative z-20">
+                        <span class="inline-block bg-[#FFB5A7] px-3 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Video Ads</span>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Realistic Ads "Kawal"</h4>
+                    </div>
+                </a>
+
+                <!-- Video 5: AI Talking Head "Copper Jewerly" (Konten Shorts Vertikal) -->
+                <a href="https://www.youtube.com/shorts/jPmlsI4htb0" target="_blank" class="group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 block">
+                    <div class="relative aspect-[4/5] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/jPmlsI4htb0/maxresdefault.jpg" alt="AI Talking Head Copper Jewerly" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/jPmlsI4htb0/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100">
+                                <svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 relative z-20">
+                        <span class="inline-block bg-[#E8DDFB] px-3 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Konten Sosmed</span>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">AI Talking Head "Copper Jewerly"</h4>
+                    </div>
+                </a>
+
+                <!-- Video 6: Ads Animation Laporan Keuangan (Ads Shorts Vertikal) -->
+                <a href="https://www.youtube.com/shorts/m3eibUTMtT4" target="_blank" class="group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 block">
+                    <div class="relative aspect-[4/5] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/m3eibUTMtT4/maxresdefault.jpg" alt="Ads Animation Laporan Keuangan" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/m3eibUTMtT4/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100">
+                                <svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 relative z-20">
+                        <span class="inline-block bg-[#FFB5A7] px-3 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Video Ads</span>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Ads Animation "Laporan Keuangan"</h4>
+                    </div>
+                </a>
+                
+            </div>
+            
+            <div class="mt-14 text-center">
+                <a href="portofolio.html" class="btn-neo inline-block bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-8 py-3.5 text-lg font-bold text-pawmi-cokelatTua">Lihat Lebih Banyak Karya Kita ➔</a>
             </div>
         </div>
     </section>
@@ -420,15 +665,12 @@
                 <div class="space-y-4 md:text-right">
                     <h3 class="text-lg font-bold text-pawmi-bg">Kontak & Sosmed</h3>
                     <div class="flex md:justify-end gap-4 mt-2">
-                        <!-- Instagram -->
                         <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="w-10 h-10 rounded-full bg-pawmi-bg/10 border border-pawmi-bg/20 flex items-center justify-center text-pawmi-bg hover:bg-pawmi-kuningTegas hover:text-pawmi-cokelatTua hover:border-pawmi-kuningTegas transition-all">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
                         </a>
-                        <!-- TikTok -->
                         <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="w-10 h-10 rounded-full bg-pawmi-bg/10 border border-pawmi-bg/20 flex items-center justify-center text-pawmi-bg hover:bg-pawmi-kuningTegas hover:text-pawmi-cokelatTua hover:border-pawmi-kuningTegas transition-all">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg>
                         </a>
-                        <!-- WhatsApp -->
                         <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="w-10 h-10 rounded-full bg-pawmi-bg/10 border border-pawmi-bg/20 flex items-center justify-center text-pawmi-bg hover:bg-pawmi-kuningTegas hover:text-pawmi-cokelatTua hover:border-pawmi-kuningTegas transition-all">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"></path></svg>
                         </a>
@@ -438,8 +680,8 @@
             <div class="border-t border-pawmi-bg/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-pawmi-bg/60">
                 <p>© 2026 Pawmi Studio. All rights reserved.</p>
                 <div class="flex gap-4">
-                    <a href="#" class="hover:text-pawmi-bg transition-colors">Syarat & Ketentuan</a>
-                    <a href="#" class="hover:text-pawmi-bg transition-colors">Kebijakan Privasi</a>
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-bg transition-colors">Syarat & Ketentuan</a>
+                    <a href="https://wa.me/6283171603841?text=Halo%20Admin%20Pawmi%20Studio,%20saya%20mau%20konsultasi%20bikin%20video%20dong." class="hover:text-pawmi-bg transition-colors">Kebijakan Privasi</a>
                 </div>
             </div>
         </div>
@@ -488,35 +730,6 @@
 
             cards.forEach(card => observer.observe(card));
         });
-    </script>
-    
-    <!-- SKRIP UNTUK MENARIK DATA GAMBAR DARI ADMIN CMS -->
-    <script>
-        fetch('/data-home.json')
-            .then(response => response.json())
-            .then(data => {
-                // Update Gambar Hero 1 (Anime)
-                if (data.hero_img_1) {
-                    document.getElementById('hero-img-1').innerHTML = `<img src="${data.hero_img_1}" alt="Animasi AI" class="w-full h-full object-cover">`;
-                }
-                // Update Gambar Hero 2 (3D)
-                if (data.hero_img_2) {
-                    document.getElementById('hero-img-2').innerHTML = `<img src="${data.hero_img_2}" alt="3D Design" class="w-full h-full object-cover">`;
-                }
-                // Update Gambar Hero 3 (Video Ads)
-                if (data.hero_img_3) {
-                    document.getElementById('hero-img-3').innerHTML = `<img src="${data.hero_img_3}" alt="Video Ads" class="w-full h-full object-cover">`;
-                }
-                // Update Gambar Jasa Animasi
-                if (data.jasa_img_animasi) {
-                    document.getElementById('jasa-img-1').innerHTML = `<img src="${data.jasa_img_animasi}" alt="Jasa Animasi" class="w-full h-full object-cover">`;
-                }
-                // Update Gambar Jasa Ads
-                if (data.jasa_img_ads) {
-                    document.getElementById('jasa-img-2').innerHTML = `<img src="${data.jasa_img_ads}" alt="Jasa Video Ads" class="w-full h-full object-cover">`;
-                }
-            })
-            .catch(error => console.log('Data CMS Home belum di-publish. Menampilkan desain standar.'));
     </script>
 </body>
 </html>

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio - Pawmi Studio</title>
-    
+
     <link href="https://api.fontshare.com/v2/css?f[]=chillax@400,600,700,900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -34,17 +34,8 @@
         .fade-in { animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="antialiased selection:bg-pawmi-kuning selection:text-pawmi-cokelatTua">
-
-    <script>
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); }
-            });
-        }
-    </script>
 
     <!-- HEADER -->
     <header class="sticky top-0 z-50 w-full bg-pawmi-bg/90 backdrop-blur-md border-b-2 border-pawmi-cokelatTua">
@@ -81,21 +72,373 @@
     <!-- GALERI UTAMA -->
     <section class="w-full py-16 bg-pawmi-bg min-h-screen">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+
             <!-- Filter Buttons -->
             <div class="flex flex-wrap justify-center gap-3 mb-12">
                 <button class="filter-btn active-filter bg-pawmi-kuningTegas border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-6 py-2.5 font-bold text-pawmi-cokelatTua transition-all hover:-translate-y-1" data-filter="all">🎛️ Semua</button>
-                <button class="filter-btn bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-6 py-2.5 font-bold text-pawmi-cokelatTua transition-all hover:-translate-y-1" data-filter="animasi">🎨 Animasi 2D</button>
-                <button class="filter-btn bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-6 py-2.5 font-bold text-pawmi-cokelatTua transition-all hover:-translate-y-1" data-filter="3d">🧊 3D Design</button>
+                <button class="filter-btn bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-6 py-2.5 font-bold text-pawmi-cokelatTua transition-all hover:-translate-y-1" data-filter="animasi">🎨 Animasi</button>
+                <button class="filter-btn bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-6 py-2.5 font-bold text-pawmi-cokelatTua transition-all hover:-translate-y-1" data-filter="anime">✨ Anime</button>
                 <button class="filter-btn bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-6 py-2.5 font-bold text-pawmi-cokelatTua transition-all hover:-translate-y-1" data-filter="ads">🎬 Video Ads</button>
                 <button class="filter-btn bg-white border-2 border-pawmi-cokelatTua shadow-neo-sm rounded-full px-6 py-2.5 font-bold text-pawmi-cokelatTua transition-all hover:-translate-y-1" data-filter="sosmed">📱 Konten Sosmed</button>
             </div>
 
-            <!-- Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
-                <div class="col-span-full text-center py-12">
-                    <p class="font-bold text-pawmi-cokelatTua/60 text-lg">Memuat portofolio dari database...</p>
-                </div>
+            <!-- Grid Portofolio -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8" id="portfolio-grid">
+                
+                <!-- ================== KATEGORI ANIMASI ================== -->
+                <a href="https://www.youtube.com/watch?v=CaR6HjcTlVY" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="animasi">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/CaR6HjcTlVY/maxresdefault.jpg" alt="Vintage Animation" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/CaR6HjcTlVY/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-pawmi-kuning px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Animasi</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Vintage Animation | Pawmi Studio</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=WRTGnVomuMI" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="animasi">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/WRTGnVomuMI/maxresdefault.jpg" alt="Boby & Caca Love Story" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/WRTGnVomuMI/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-pawmi-kuning px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Animasi</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Boby & Caca Love Story Split Animation</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=xmOeyPG89pY" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="animasi">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/xmOeyPG89pY/maxresdefault.jpg" alt="Stop Motion Animation Music Video" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/xmOeyPG89pY/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-pawmi-kuning px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Animasi</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Stop Motion Animation Music Video</h4>
+                    </div>
+                </a>
+
+                <!-- ================== KATEGORI ADS ================== -->
+                <a href="https://www.youtube.com/watch?v=W6MTXOGw8h4" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="ads">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/W6MTXOGw8h4/maxresdefault.jpg" alt="Ads Animation Kawal" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/W6MTXOGw8h4/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#FFB5A7] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Ads</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Ads Animation "Kawal"</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=azHWvh2qsrQ" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="ads">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/azHWvh2qsrQ/maxresdefault.jpg" alt="Ads Animation Kawal 2" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/azHWvh2qsrQ/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#FFB5A7] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Ads</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Ads Animation "Kawal" #2</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=CaWX_ArDl58" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="ads">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/CaWX_ArDl58/maxresdefault.jpg" alt="Realistic Ads Kawal" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/CaWX_ArDl58/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#FFB5A7] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Ads</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Realistic Ads "Kawal"</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/shorts/m3eibUTMtT4" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="ads">
+                    <div class="relative aspect-[9/16] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/m3eibUTMtT4/maxresdefault.jpg" alt="Laporan Keuangan" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/m3eibUTMtT4/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#FFB5A7] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Ads</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Ads Animation "Laporan Keuangan"</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/shorts/k90a52zpUx0" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="ads">
+                    <div class="relative aspect-[9/16] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/k90a52zpUx0/maxresdefault.jpg" alt="Thanks Card" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/k90a52zpUx0/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#FFB5A7] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Ads</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Fluffi Bakery Animation "Thanks Card"</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/shorts/lntDEjuD4Mc" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="ads">
+                    <div class="relative aspect-[9/16] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/lntDEjuD4Mc/maxresdefault.jpg" alt="Fluffi Bakery Promo" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/lntDEjuD4Mc/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#FFB5A7] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Ads</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Animation "Fluffi Bakery" Promotion Video</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/shorts/O1YTAmBSAkI" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="ads">
+                    <div class="relative aspect-[9/16] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/O1YTAmBSAkI/maxresdefault.jpg" alt="Realistic Promo" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/O1YTAmBSAkI/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#FFB5A7] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Ads</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Realistic AI Promotion "Fluffi Bakery"</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/shorts/L6SHeWtTByo" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="ads">
+                    <div class="relative aspect-[9/16] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/L6SHeWtTByo/maxresdefault.jpg" alt="Real Estate Animation" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/L6SHeWtTByo/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#FFB5A7] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Ads</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Real Estate Animation Promotion Video</h4>
+                    </div>
+                </a>
+
+                <!-- ================== KATEGORI KONTEN SOSMED ================== -->
+                <a href="https://www.youtube.com/shorts/jPmlsI4htb0" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="sosmed">
+                    <div class="relative aspect-[9/16] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/jPmlsI4htb0/maxresdefault.jpg" alt="AI Talking Head" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/jPmlsI4htb0/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#E8DDFB] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Konten Sosmed</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">AI Talking Head "Copper Jewerly"</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=aZVv1Yef-ig" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="sosmed">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/aZVv1Yef-ig/maxresdefault.jpg" alt="Realistic Perang Badar" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/aZVv1Yef-ig/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#E8DDFB] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Konten Sosmed</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Realistic "Perang Badar"</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/shorts/TBGOvDuGjlQ" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="sosmed">
+                    <div class="relative aspect-[9/16] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/TBGOvDuGjlQ/maxresdefault.jpg" alt="Realistic Education Content" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/TBGOvDuGjlQ/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#E8DDFB] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Konten Sosmed</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Realistic Education Content</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/shorts/BtKp-6HyyzY" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="sosmed">
+                    <div class="relative aspect-[9/16] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/BtKp-6HyyzY/maxresdefault.jpg" alt="Visa Education" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/BtKp-6HyyzY/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#E8DDFB] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Konten Sosmed</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Visa Education Content</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/shorts/NarxGE5Tor4" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="sosmed">
+                    <div class="relative aspect-[9/16] bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/NarxGE5Tor4/maxresdefault.jpg" alt="Expat Education" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/NarxGE5Tor4/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#E8DDFB] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Konten Sosmed</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Expat Education Content</h4>
+                    </div>
+                </a>
+
+                <!-- ================== KATEGORI ANIME ================== -->
+                <a href="https://www.youtube.com/watch?v=oasT2ImQ8Z8" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="anime">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/oasT2ImQ8Z8/maxresdefault.jpg" alt="The Story of Fatwatul & Faridah" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/oasT2ImQ8Z8/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#A7E4FF] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Anime</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">The Story of Fatwatul & Faridah</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=EK2d34ASRLY" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="anime">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/EK2d34ASRLY/maxresdefault.jpg" alt="The Love Story of William & Irene" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/EK2d34ASRLY/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#A7E4FF] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Anime</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">The Love Story of William & Irene</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=NjookPOI-GQ" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="anime">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/NjookPOI-GQ/maxresdefault.jpg" alt="The Love Story of Fathim & Ibrahim" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/NjookPOI-GQ/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#A7E4FF] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Anime</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">The Love Story of Fathim & Ibrahim</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=MkiLVqeA8Ag" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="anime">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/MkiLVqeA8Ag/maxresdefault.jpg" alt="The Story of Ramadhania" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/MkiLVqeA8Ag/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#A7E4FF] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Anime</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">The Story of Ramadhania</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=czc0R5ADYIE" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="anime">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/czc0R5ADYIE/maxresdefault.jpg" alt="Long Love Story to find Ebru" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/czc0R5ADYIE/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#A7E4FF] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Anime</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Long Love Story to find "Ebru"</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=WTi3Z9EQbBA" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="anime">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/WTi3Z9EQbBA/maxresdefault.jpg" alt="The Love Story of Rosda & Firman" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/WTi3Z9EQbBA/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#A7E4FF] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Anime</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">The Love Story of Rosda & Firman</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=nKJmTqvAxdI" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="anime">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/nKJmTqvAxdI/maxresdefault.jpg" alt="The 10th Anniversary" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/nKJmTqvAxdI/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#A7E4FF] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Anime</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">The 10th Anniversary</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=3EmDJgCwCNY" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="anime">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/3EmDJgCwCNY/maxresdefault.jpg" alt="2 Continents, 7 Hours Apart" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/3EmDJgCwCNY/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#A7E4FF] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Anime</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">2 Continents, 7 Hours Apart... But True Love Win</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=swzuK6maG3s" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="anime">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/swzuK6maG3s/maxresdefault.jpg" alt="The Love Story of Adel & Mumtaz" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/swzuK6maG3s/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#A7E4FF] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Anime</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">The Love Story of Adel & Mumtaz</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=dLzZxZup-cM" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="anime">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/dLzZxZup-cM/maxresdefault.jpg" alt="The Love Story of Rangga & Moe" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/dLzZxZup-cM/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#A7E4FF] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Anime</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">The Love Story of Rangga & Moe</h4>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=Qfxg9sJ7jh8" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 flex flex-col h-full" data-category="anime">
+                    <div class="relative aspect-video bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
+                        <img src="https://img.youtube.com/vi/Qfxg9sJ7jh8/maxresdefault.jpg" alt="Sekolah Darul Quran Fattah Farewell Anime" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/Qfxg9sJ7jh8/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
+                            <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100"><svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div><span class="inline-block bg-[#A7E4FF] px-2 py-1 rounded-md border-2 border-pawmi-cokelatTua text-[10px] font-black uppercase mb-2">Anime</span></div>
+                        <h4 class="font-black text-pawmi-cokelatTua text-lg leading-tight line-clamp-2">Sekolah Darul Quran Fattah Farewell Anime</h4>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -107,86 +450,35 @@
         </div>
     </footer>
 
-    <!-- SKRIP UTAMA PEMBUAT KARTU OTOMATIS & PEMBERSIH LINK YOUTUBE -->
+    <!-- SKRIP SISTEM FILTER -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const grid = document.getElementById('portfolio-grid');
-
-            fetch('/data-portofolio.json')
-                .then(response => response.json())
-                .then(data => {
-                    if (data.videos && data.videos.length > 0) {
-                        let htmlContent = '';
-                        
-                        data.videos.forEach(video => {
-                            let badgeBg = 'bg-pawmi-kuning';
-                            let badgeText = 'Portofolio';
-                            let aspectClass = 'aspect-video'; 
-
-                            if(video.kategori === 'animasi') { badgeBg = 'bg-pawmi-kuning'; badgeText = 'Animasi 2D'; aspectClass = 'aspect-video'; }
-                            else if(video.kategori === 'ads') { badgeBg = 'bg-[#FFB5A7]'; badgeText = 'Video Ads'; aspectClass = 'aspect-[9/16]'; }
-                            else if(video.kategori === '3d') { badgeBg = 'bg-[#A7E4FF]'; badgeText = '3D Design'; aspectClass = 'aspect-video'; }
-                            else if(video.kategori === 'sosmed') { badgeBg = 'bg-[#E8DDFB]'; badgeText = 'Konten Sosmed'; aspectClass = 'aspect-[9/16]'; }
-
-                            // PEMBERSIH OTOMATIS: Kalau lu tak sengaja paste full link, skrip ini otomatis mengambil ID-nya saja!
-                            let rawId = video.youtube_id ? video.youtube_id.trim() : '';
-                            let cleanId = rawId;
-                            if (rawId.includes('youtu.be/')) {
-                                cleanId = rawId.split('youtu.be/')[1].split('?')[0];
-                            } else if (rawId.includes('watch?v=')) {
-                                cleanId = rawId.split('watch?v=')[1].split('&')[0];
-                            }
-
-                            const thumbUrl = `https://img.youtube.com/vi/${cleanId}/maxresdefault.jpg`;
-                            const watchUrl = `https://www.youtube.com/watch?v=${cleanId}`;
-
-                            htmlContent += `
-                            <a href="${watchUrl}" target="_blank" class="portfolio-item group relative rounded-[2rem] border-4 border-pawmi-cokelatTua bg-white overflow-hidden shadow-neo-md hover:-translate-y-2 transition-all duration-300 block" data-category="${video.kategori}">
-                                <div class="relative ${aspectClass} bg-gray-200 flex items-center justify-center overflow-hidden border-b-4 border-pawmi-cokelatTua">
-                                    <img src="${thumbUrl}" alt="${video.title}" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/${cleanId}/hqdefault.jpg'">
-                                    <div class="absolute inset-0 bg-pawmi-cokelatTua/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-10">
-                                        <div class="w-16 h-16 bg-pawmi-kuningTegas rounded-full border-4 border-pawmi-cokelatTua flex items-center justify-center shadow-neo-sm transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100">
-                                            <svg class="w-8 h-8 text-pawmi-cokelatTua ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="p-6">
-                                    <span class="inline-block ${badgeBg} px-3 py-1 rounded-md border-2 border-pawmi-cokelatTua text-xs font-black uppercase mb-3">${badgeText}</span>
-                                    <h4 class="font-black text-pawmi-cokelatTua text-xl leading-tight">${video.title}</h4>
-                                </div>
-                            </a>
-                            `;
-                        });
-                        grid.innerHTML = htmlContent;
-                    } else {
-                        grid.innerHTML = `<div class="col-span-full text-center py-12"><p class="font-bold text-pawmi-cokelatTua/60">Belum ada portofolio yang dipublikasikan dari Admin.</p></div>`;
-                    }
-                })
-                .catch(error => {
-                    grid.innerHTML = `<div class="col-span-full text-center py-12"><p class="font-bold text-red-600">Gagal memuat data portofolio.</p></div>`;
-                });
-
-            // Sistem Filter Kategori
             const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => { b.classList.remove('bg-pawmi-kuningTegas'); b.classList.add('bg-white'); });
-                    btn.classList.remove('bg-white'); btn.classList.add('bg-pawmi-kuningTegas');
+                    // Update Active Button UI
+                    filterBtns.forEach(b => { 
+                        b.classList.remove('bg-pawmi-kuningTegas'); 
+                        b.classList.add('bg-white'); 
+                    });
+                    btn.classList.remove('bg-white'); 
+                    btn.classList.add('bg-pawmi-kuningTegas');
 
+                    // Filter Logic
                     const filterValue = btn.getAttribute('data-filter');
-                    setTimeout(() => {
-                        const portfolioItems = document.querySelectorAll('.portfolio-item');
-                        portfolioItems.forEach(item => {
-                            item.classList.remove('fade-in');
-                            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                                item.style.display = 'block';
-                                void item.offsetWidth;
-                                item.classList.add('fade-in');
-                            } else {
-                                item.style.display = 'none';
-                            }
-                        });
-                    }, 50);
+                    
+                    portfolioItems.forEach(item => {
+                        item.classList.remove('fade-in');
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'flex'; // Pakai flex karena desain grid kita butuh flex-col
+                            void item.offsetWidth; // Trigger reflow
+                            item.classList.add('fade-in');
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
                 });
             });
         });

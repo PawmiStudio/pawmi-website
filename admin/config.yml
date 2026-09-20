@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  - name: "data_web"
+    label: "Database Website"
+    files:
+      - label: "Karya Portofolio (Otomatis Youtube)"
+        name: "portofolio"
+        file: "data-portofolio.json"
+        fields:
+          - label: "Daftar Video Portofolio"
+            name: "videos"
+            widget: "list"
+            fields:
+              - {label: "Judul Video", name: "title", widget: "string"}
+              - {label: "Kategori", name: "kategori", widget: "select", options: ["animasi", "3d", "ads", "sosmed"]}
+              - {label: "ID Video YouTube (Contoh: dQw4w9WgXcQ)", name: "youtube_id", widget: "string"}
+
+      - label: "Edit Halaman Utama (Home)"
+        name: "page_home"
+        file: "data-home.json"
+        fields:
+          - {label: "Gambar Hero 1 (Anime AI)", name: "hero_img_1", widget: "image", required: false}
+          - {label: "Gambar Hero 2 (3D Design)", name: "hero_img_2", widget: "image", required: false}
+          - {label: "Gambar Hero 3 (Cuplikan Video Ads)", name: "hero_img_3", widget: "image", required: false}
+          - {label: "Gambar Menu Jasa Animasi", name: "jasa_img_animasi", widget: "image", required: false}
+          - {label: "Gambar Menu Jasa Video Ads", name: "jasa_img_ads", widget: "image", required: false}
+
+      - label: "Edit Halaman Video Ads"
+        name: "page_video_ads"
+        file: "data-video-ads.json"
+        fields:
+          - {label: "Gambar Mascot Bawah", name: "mascot_image", widget: "image", required: false}
+
+      - label: "Edit Halaman Animasi AI"
+        name: "page_animasi_ai"
+        file: "data-animasi-ai.json"
+        fields:
+          - {label: "Gambar Mascot Bawah", name: "mascot_image", widget: "image", required: false}
